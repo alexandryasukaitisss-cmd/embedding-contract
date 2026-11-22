@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "embedding-contract"
+version = "0.1.0"
+description = "Provider-neutral embedding identity, safe backfill, and explicit local/cloud adapters for agent memory."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Aliaksandr Yasiukaitsis" }]
+requires-python = ">=3.11"
+dependencies = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+keywords = ["embeddings", "memory", "rag", "ollama", "gemini", "vector-search"]
+
+[project.scripts]
+embedding-contract = "embedding_contract.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/embedding_contract"]
+
+[project.urls]
+Homepage = "https://github.com/alexandryasukaitisss-cmd/embedding-contract"
+Repository = "https://github.com/alexandryasukaitisss-cmd/embedding-contract"
+Issues = "https://github.com/alexandryasukaitisss-cmd/embedding-contract/issues"

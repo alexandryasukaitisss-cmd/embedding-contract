@@ -1,0 +1,7 @@
+{
+  "provider": "gemini",
+  "model": "gemini-embedding-2",
+  "dimensions": 768,
+  "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+  "apiKeyEnv": "GEMINI_API_KEY"
+}
