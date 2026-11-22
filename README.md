@@ -2,9 +2,11 @@
 
 [![ci](https://github.com/alexandryasukaitisss-cmd/embedding-contract/actions/workflows/ci.yml/badge.svg)](https://github.com/alexandryasukaitisss-cmd/embedding-contract/actions/workflows/ci.yml)
 
-**A provider-neutral identity and backfill layer for agent memory.**
+Embedding Contract keeps memory vectors from different models from getting mixed. If the model, dimensions, the way queries and documents are prepared, or the local model file change, old vectors are treated as stale and must be rebuilt. The package also fills in missing vectors in batches and leaves valid ones alone.
 
-A logical continuation of **[MemPalace Retrieval](https://github.com/alexandryasukaitisss-cmd/mempalace-retrieval)** and **[Memory Ledger](https://github.com/alexandryasukaitisss-cmd/memory-ledger)**. The retrieval layer decides what may be served; this layer decides which vectors may share an index and how to backfill them without corrupting it.
+The default route is local: Gemma `embeddinggemma-2:270m` through Ollama. An optional Gemini route uses `gemini-embedding-2`; it sends text to Google and is never selected automatically.
+
+This is a logical continuation of **[MemPalace Retrieval](https://github.com/alexandryasukaitisss-cmd/mempalace-retrieval)** and **[Memory Ledger](https://github.com/alexandryasukaitisss-cmd/memory-ledger)**. The retrieval layer decides what may be served; this layer decides which vectors may share an index and how to fill them safely.
 
 Version 0.1.0. Python 3.11+. MIT. No runtime dependencies.
 

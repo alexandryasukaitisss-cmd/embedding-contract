@@ -2,9 +2,11 @@
 
 [![ci](https://github.com/alexandryasukaitisss-cmd/embedding-contract/actions/workflows/ci.yml/badge.svg)](https://github.com/alexandryasukaitisss-cmd/embedding-contract/actions/workflows/ci.yml)
 
-**Провайдер-нейтральный слой идентичности и backfill для памяти агентов.**
+Embedding Contract не даёт смешать в памяти векторы от разных моделей. Если изменились модель, размерность, то, как готовятся запросы и документы, или локальный файл модели, старые векторы считаются устаревшими и их нужно пересчитать. Пакет также дозаполняет отсутствующие векторы батчами и не трогает валидные.
 
-Логичное продолжение **[MemPalace Retrieval](https://github.com/alexandryasukaitisss-cmd/mempalace-retrieval)** и **[Memory Ledger](https://github.com/alexandryasukaitisss-cmd/memory-ledger)**. Retrieval решает, что можно отдавать; этот слой решает, какие векторы вообще могут лежать в одном индексе и как безопасно дозаполнить остальные.
+По умолчанию всё локально: Gemma `embeddinggemma-2:270m` через Ollama. Опциональный маршрут Gemini использует `gemini-embedding-2`; он отправляет текст в Google и никогда не выбирается сам.
+
+Это логичное продолжение **[MemPalace Retrieval](https://github.com/alexandryasukaitisss-cmd/mempalace-retrieval)** и **[Memory Ledger](https://github.com/alexandryasukaitisss-cmd/memory-ledger)**. Retrieval решает, что можно отдавать; этот слой решает, какие векторы могут лежать в одном индексе и как безопасно их дозаполнить.
 
 Версия 0.1.0. Python 3.11+. MIT. Без runtime-зависимостей.
 
