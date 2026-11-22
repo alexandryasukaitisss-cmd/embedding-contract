@@ -1,5 +1,7 @@
 # Embedding Contract
 
+[![ci](https://github.com/alexandryasukaitisss-cmd/embedding-contract/actions/workflows/ci.yml/badge.svg)](https://github.com/alexandryasukaitisss-cmd/embedding-contract/actions/workflows/ci.yml)
+
 **A provider-neutral identity and backfill layer for agent memory.**
 
 A logical continuation of **[MemPalace Retrieval](https://github.com/alexandryasukaitisss-cmd/mempalace-retrieval)** and **[Memory Ledger](https://github.com/alexandryasukaitisss-cmd/memory-ledger)**. The retrieval layer decides what may be served; this layer decides which vectors may share an index and how to backfill them without corrupting it.

@@ -1,5 +1,7 @@
 # Embedding Contract
 
+[![ci](https://github.com/alexandryasukaitisss-cmd/embedding-contract/actions/workflows/ci.yml/badge.svg)](https://github.com/alexandryasukaitisss-cmd/embedding-contract/actions/workflows/ci.yml)
+
 **Провайдер-нейтральный слой идентичности и backfill для памяти агентов.**
 
 Логичное продолжение **[MemPalace Retrieval](https://github.com/alexandryasukaitisss-cmd/mempalace-retrieval)** и **[Memory Ledger](https://github.com/alexandryasukaitisss-cmd/memory-ledger)**. Retrieval решает, что можно отдавать; этот слой решает, какие векторы вообще могут лежать в одном индексе и как безопасно дозаполнить остальные.
