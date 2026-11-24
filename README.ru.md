@@ -44,6 +44,10 @@ Gemini нельзя скачать: это API. Пакет поддержива�
 ## Установка
 
 ```sh
+pip install "git+https://github.com/alexandryasukaitisss-cmd/embedding-contract.git"
+```
+
+```sh
 git clone https://github.com/alexandryasukaitisss-cmd/embedding-contract.git
 cd embedding-contract
 python3 -m venv .venv
@@ -189,3 +193,13 @@ python -m compileall -q src tests
 ## Лицензия
 
 MIT. См. [LICENSE](LICENSE).
+
+## Локальный стек памяти для AI-агентов
+
+Этот репозиторий — часть модульного локального стека надёжной памяти агентов (каждый компонент работает самостоятельно):
+
+| Слой | Репозиторий | Зона ответственности |
+| --- | --- | --- |
+| **1. Журнал фактов во времени** | [memory-ledger](https://github.com/alexandryasukaitisss-cmd/memory-ledger) | Append-only журнал SQLite, источники, смена `A → B → A`, откат конфликтов и отзыв фактов |
+| **2. Поиск с проверкой прав** | [mempalace-retrieval](https://github.com/alexandryasukaitisss-cmd/mempalace-retrieval) | Проверка области доступа до ранжирования, Reciprocal Rank Fusion, отсев устаревших фактов и отказ при слабом совпадении |
+| **3. Контракт векторного пространства** | [embedding-contract](https://github.com/alexandryasukaitisss-cmd/embedding-contract) | Защита от тихого смешивания векторов разных моделей (локальная Ollama Gemma и опциональный Gemini) |

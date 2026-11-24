@@ -44,6 +44,10 @@ Gemini is not a downloadable model. It is an API. The package supports both, but
 ## Install
 
 ```sh
+pip install "git+https://github.com/alexandryasukaitisss-cmd/embedding-contract.git"
+```
+
+```sh
 git clone https://github.com/alexandryasukaitisss-cmd/embedding-contract.git
 cd embedding-contract
 python3 -m venv .venv
@@ -189,3 +193,13 @@ The tests use fake HTTP servers and require no model, network, API key, or perso
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Local-First Agent Memory Stack
+
+This repository is part of a modular, local-first stack for reliable AI agent memory (each component works standalone):
+
+| Layer | Repository | Responsibility |
+| --- | --- | --- |
+| **1. Temporal Fact Ledger** | [memory-ledger](https://github.com/alexandryasukaitisss-cmd/memory-ledger) | Append-only SQLite event journal, provenance, `A → B → A` supersession, conflict rollback vs retraction |
+| **2. Permission-First Retrieval** | [mempalace-retrieval](https://github.com/alexandryasukaitisss-cmd/mempalace-retrieval) | Scope filtering before ranking, Reciprocal Rank Fusion, stale-fact rejection, evidence-based abstention |
+| **3. Vector Space Integrity** | [embedding-contract](https://github.com/alexandryasukaitisss-cmd/embedding-contract) | Fails fast on model/dimension/prefix drift across Ollama Gemma and optional Gemini embeddings |
